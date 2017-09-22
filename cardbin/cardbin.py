@@ -1,4 +1,5 @@
-import json,os
+import json
+import os
 import pickle
 
 from stdnum import luhn
@@ -15,8 +16,5 @@ def cardbin(card):
     if key:
         key = key.split('|')
         return {'bank': key[0], 'type': key[1]}
-    else:
-        return {'bank': '未知银行卡', 'type': key[1]}
-
-# if __name__ == '__main__':
-#     cardbin('6228480402564890018')
+       
+    return {'bank': '未知银行卡', 'type': key[1]}
