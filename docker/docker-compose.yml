@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+  server1:
+    restart: always
+    build: .
+    ports:
+      - "0.0.0.0:8080:8080" 
+    command: /app/server1.py
+
+  server0:
+    restart: always
+    build: .
+    ports:
+      - "0.0.0.0:4242:4242" 
+    command: /app/server0.py
