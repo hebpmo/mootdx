@@ -1,13 +1,13 @@
+# -*- coding: utf-8 -*-
+
 import json
 import os
 import pickle
 
-from stdnum import luhn
-
-BASEDIR = os.path.dirname(os.path.realpath(__file__))
-BANKBIN = pickle.load(open(os.path.join(BASEDIR, 'cardbin.pkl'), 'rb'))
-
-def cardbin(card):
+def valid(card):
+    from stdnum import luhn
+    from cardbin.bankbin import BANKBIN 
+    
     if not luhn.is_valid(card):
         return False
         
@@ -17,4 +17,4 @@ def cardbin(card):
         key = key.split('|')
         return {'bank': key[0], 'type': key[1]}
        
-    return {'bank': '未知银行卡', 'type': key[1]}
+    return {'bank': u'未知银行卡', 'type': key[1]}
