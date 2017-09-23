@@ -4,10 +4,11 @@ import json
 import os
 import pickle
 
+from stdnum import luhn
+from .bankbin import BANKBIN
+
 def valid(card):
-    from stdnum import luhn
-    from cardbin.bankbin import BANKBIN 
-    
+
     if not luhn.is_valid(card):
         return False
         
