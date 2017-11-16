@@ -1,2 +1,2 @@
-pytdx
+pytdx==1.57
 click
